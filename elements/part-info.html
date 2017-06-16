@@ -1,0 +1,41 @@
+<template-element id="part-info">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <div id="info">
+      <div id="counters">
+        <div class="counter"><strong text="state.total"></strong> todos</div>
+        <div class="counter"><strong text="state.left"></strong> to complete</div>
+        <div class="counter"><strong text="state.done"></strong> completed</div>
+      </div>
+      <div id="actions">
+        <button id="button" on-click="on_click_clear">clear completed</button>
+      </div>
+    </div>
+
+  </template>
+</template-element>
+
+<script>
+  class PartInfo extends pantarei.Element {
+
+    static get is () { return 'part-info' }
+
+    static get props () {
+      return {
+        state: { value: {} }
+      }
+    }
+
+    on_click_clear (event) {
+      this.action('clear_todos')
+    }
+
+  }
+
+  window.customElements.define(PartInfo.is, PartInfo)
+</script>

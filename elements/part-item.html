@@ -1,0 +1,40 @@
+<template-element id="part-item">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <div id="item">
+      <input id="toggle" type="checkbox" prop-checked="todo.done" on-change="on_click_toggle">
+      <label id="label" text="todo.text"></label>
+      <button id="remove" on-click="on_click_remove">remove</button>
+    </div>
+
+  </template>
+</template-element>
+
+<script>
+  class PartItem extends pantarei.Element {
+
+    static get is () { return 'part-item' }
+
+    static get props () {
+      return {
+        todo: { value: {} }
+      }
+    }
+
+    on_click_toggle (event) {
+      this.action('toggle_todo', { todo: this.todo })
+    }
+
+    on_click_remove (event) {
+      this.action('remove_todo', { todo: this.todo })
+    }
+
+  }
+
+  window.customElements.define(PartItem.is, PartItem)
+</script>

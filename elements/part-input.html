@@ -1,0 +1,35 @@
+<template-element id="part-input">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <input id="input" placeholder="What needs to be done?" autofocus on-keypress="on_keypress">
+
+  </template>
+</template-element>
+
+<script>
+  class PartInput extends pantarei.Element {
+
+    static get is () { return 'part-input' }
+
+    on_keypress (event) {
+      let input = this.refs.input
+      if (event.which !== 13) {
+        return
+      }
+      let text = input.value.trim()
+      if (!text) {
+        return
+      }
+      this.action('create_todo', { text: text })
+      input.value = ''
+    }
+
+  }
+
+  window.customElements.define(PartInput.is, PartInput)
+</script>
