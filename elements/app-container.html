@@ -10,6 +10,20 @@
       :host {
         display: block;
       }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        min-height: 100vh;
+        width: 100%;
+        padding: 3%;
+      }
+
+      #main {
+        flex: 1;
+        max-width: 300px;
+      }
     </style>
 
     <div id="container" on-action="on_action">

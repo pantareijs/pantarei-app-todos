@@ -4,6 +4,33 @@
       :host {
         display: block;
       }
+
+      #item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 6px 0;
+      }
+
+      #label {
+        flex: 1;
+      }
+
+      #remove {
+        visibility: hidden;
+        border: none;
+        background-color: transparent;
+        font-size: inherit;
+      }
+      #remove:hover {
+        cursor: pointer;
+      }
+      #remove:focus {
+        outline: none;
+      }
+      #item:hover #remove {
+        visibility: visible;
+      }
     </style>
 
     <div id="item">

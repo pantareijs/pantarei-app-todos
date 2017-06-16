@@ -4,6 +4,33 @@
       :host {
         display: block;
       }
+
+      #info {
+        box-sizing: border-box;
+        margin: 24px 0;
+      }
+
+      .counter,
+      .action {
+        margin-bottom: 12px;
+      }
+
+      #button {
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 0;
+        border: 0;
+        font-size: inherit;
+        color: inherit;
+        background: transparent;
+        outline: none;
+      }
+      #button:hover {
+        cursor: pointer;
+      }
+      #button:active {
+        outline: none;
+      }
     </style>
 
     <div id="info">
@@ -13,7 +40,7 @@
         <div class="counter"><strong text="state.done"></strong> completed</div>
       </div>
       <div id="actions">
-        <button id="button" on-click="on_click_clear">clear completed</button>
+        <button id="button" class="action" on-click="on_click_clear">clear completed</button>
       </div>
     </div>
 
