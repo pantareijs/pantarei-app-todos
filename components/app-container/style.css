@@ -1,0 +1,23 @@
+:host {
+  --container-padding: 20px;
+  --grid-gap: 20px;
+}
+
+:host {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: var(--container-padding);
+}
+
+:host {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-auto-flow: row;
+}
+
+#header {}
+
+#main {}
+
+#footer {}

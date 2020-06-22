@@ -1,0 +1,6 @@
+:host {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  grid-column-gap: var(--grid-gap);
+}

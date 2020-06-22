@@ -1,0 +1,10 @@
+{
+  "name": "home",
+  "component": "page-home",
+  "routes": [
+    {
+      "param": "view",
+      "component": "page-home"
+    }
+  ]
+}
